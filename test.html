@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merge PDFs</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-
     <style>
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
             background-color: #f4f4f4;
+            margin: 0;
         }
         h1 {
             text-align: center;
+            margin-bottom: 20px;
         }
         .form-group {
             margin-bottom: 20px;
@@ -23,20 +24,19 @@
             margin-bottom: 5px;
         }
         input[type="file"],
-        input[type="text"] {
+        input[type="text"],
+        button {
             width: 100%;
             padding: 10px;
             margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in total width */
         }
         button {
-            width: 100%;
-            padding: 10px;
             background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
@@ -46,17 +46,27 @@
             display: none;
             margin-top: 20px;
             text-align: center;
-        }
-        a {
-            display: inline-block;
-            padding: 10px;
             background-color: #28a745;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            padding: 10px;
         }
-        a:hover {
+        #download-link:hover {
             background-color: #218838;
+        }
+        @media (max-width: 600px) {
+            /* Adjustments for mobile devices */
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            button,
+            #download-link {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
